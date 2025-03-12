@@ -1,0 +1,161 @@
+// components/HomePage.tsx
+import { FaRegFilePdf, FaImage, FaFileExcel, FaFileWord, FaLock, FaMobileAlt } from 'react-icons/fa';
+
+const HomePage = () => {
+  const tools = [
+    { icon: <FaRegFilePdf />, title: "PDF Tools", category: [
+      'Merge PDF', 'Split PDF', 'Compress PDF', 'PDF to Word', 'PDF to Excel'
+    ]},
+    { icon: <FaImage />, title: "Image Tools", category: [
+      'Convert JPG to PDF', 'Resize Image', 'Compress Image', 'Image to PDF', 'OCR'
+    ]},
+    { icon: <FaFileExcel />, title: "Excel Tools", category: [
+      'Excel to PDF', 'Excel Counter', 'CSV Converter', 'Excel Analyzer', 'Format Cleaner'
+    ]},
+    { icon: <FaFileWord />, title: "Word Tools", category: [
+      'Word to PDF', 'Docx Converter', 'Word Counter', 'Document Editor', 'Redaction'
+    ]},
+    { icon: <FaLock />, title: "Security Tools", category: [
+      'PDF Encryption', 'PDF Decryption', 'Watermark', 'Digital Signature', 'Redaction'
+    ]},
+    { icon: <FaMobileAlt />, title: "Mobile Tools", category: [
+      'Scan to PDF', 'Mobile Editor', 'QR Generator', 'Contact Card', 'File Sharing'
+    ]},
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <header className="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            All-In-One Document & Image Solution
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 opacity-90">
+            Convert, edit, and manage PDFs, images, and office files with ease
+          </p>
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition-all">
+              Start Processing Free
+            </button>
+            <button className="border-2 border-white px-8 py-3 rounded-full text-lg hover:bg-white hover:text-blue-600 transition-all">
+              Explore Tools
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Ad Banner */}
+      <div className="max-w-6xl mx-auto p-4">
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-7057695873482887"
+          data-ad-slot="8333144953"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
+      {/* Tools Grid */}
+      <main className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+          Popular Tools Categories
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {tools.map((tool, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+            >
+              <div className="flex items-center mb-4">
+                <span className="text-3xl text-blue-600 mr-3">{tool.icon}</span>
+                <h3 className="text-xl font-semibold text-gray-800">{tool.title}</h3>
+              </div>
+              <ul className="space-y-2">
+                {tool.category.map((item, idx) => (
+                  <li 
+                    key={idx}
+                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    <span className="mr-2">•</span>
+                    <a href="#" className="hover:underline">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </main>
+
+      {/* Features Section */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Why Choose Us?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="text-5xl text-blue-600 mb-4">🚀</div>
+              <h3 className="text-xl font-semibold mb-3">Lightning Fast Processing</h3>
+              <p className="text-gray-600">Cloud-powered conversions that take seconds</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-5xl text-blue-600 mb-4">🔒</div>
+              <h3 className="text-xl font-semibold mb-3">Military-Grade Security</h3>
+              <p className="text-gray-600">Files automatically deleted after 1 hour</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-5xl text-blue-600 mb-4">💯</div>
+              <h3 className="text-xl font-semibold mb-3">100% Free Tools</h3>
+              <p className="text-gray-600">No registration required - use instantly</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-12 px-4">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+          <div>
+            <h4 className="text-xl font-semibold mb-4">Document Tools</h4>
+            <p className="text-gray-400">
+              Your comprehensive solution for all document and image processing needs
+            </p>
+          </div>
+          <div>
+            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-blue-400 transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xl font-semibold mb-4">Tools</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-blue-400 transition-colors">PDF Tools</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Image Tools</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Office Tools</a></li>
+              <li><a href="#" className="hover:text-blue-400 transition-colors">Security Tools</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-xl font-semibold mb-4">Connect</h4>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-blue-400 transition-colors">Twitter</a>
+              <a href="#" className="hover:text-blue-400 transition-colors">Facebook</a>
+              <a href="#" className="hover:text-blue-400 transition-colors">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+          <p>© 2024 Document Tools. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default HomePage;
